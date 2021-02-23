@@ -35,3 +35,7 @@ iDBRequest.onsuccess = (event) => {
         };
     };
 };
+
+iDBRequest.onerror = (event) => {
+    console.log(`ERROR: ${event.target.errorCode}`)
+}
