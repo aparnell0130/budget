@@ -41,3 +41,10 @@ iDBRequest.onsuccess = (event) => {
 iDBRequest.onerror = (event) => {
     console.log(`ERROR: ${event.target.errorCode}`)
 }
+
+const saveRecord = (record) => {
+    const transaction = db.transaction('pending', 'readwrite');
+    const store = transaction.objectStore('pending');
+
+    store.add(record);
+}
