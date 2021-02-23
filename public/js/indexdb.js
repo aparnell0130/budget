@@ -8,7 +8,9 @@ iDBRequest.onupgradeneeded = (event) => {
 
 iDBRequest.onsuccess = (event) => {
     db = event.target.result;
-
+    if (navigator.onLine) {
+        checkForIndexDb();
+    }
     const checkForIndexDb = () => {
         const transaction = db.transaction(['pending'], 'readwrite');
         const store = transaction.objectStore('pending');
