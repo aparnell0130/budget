@@ -51,3 +51,5 @@ const checkForIndexDb = () => {
         }
     };
 };
+
+window.addEventListener('online', checkForIndexDb);
